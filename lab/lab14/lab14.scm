@@ -1,0 +1,28 @@
+(define (len lst)
+	(define (l n lst) (if (null? lst) n (l (+ n 1) (cdr lst))))
+	(l 0 lst)
+)
+
+(define (reverse lst)
+	(define (func lst ret) (if (null? lst) ret (func (cdr lst) (cons (car lst) ret))))
+	(func lst nil)
+)
+
+(define (split-at lst n) 
+	(define l (len lst))
+	(define (func lst i ret)
+		(if (= i l) (reverse ret) 
+			(if (= i n) (cons (reverse ret) (func (cdr lst) (+ i 1) (cons (car lst) nil))) 
+				(func (cdr lst) (+ i 1) (cons (car lst) ret))))
+		)
+	(if (> n l) (cons lst nil)
+		(func lst 0 nil))
+)
+
+(define (compose-all funcs)
+	(define (func lst ret)
+		(if (null? lst) ret
+			(func (cdr lst) ((car lst) ret)))
+		)
+	(lambda (x) (func funcs x))
+)

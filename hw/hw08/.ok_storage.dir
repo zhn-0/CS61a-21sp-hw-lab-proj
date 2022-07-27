@@ -1,0 +1,4 @@
+'derive-sum-correct', (0, 70)
+'accumulate-tail-correct', (512, 70)
+'derive-product-correct', (1024, 70)
+'quasiquote-correct', (1536, 70)

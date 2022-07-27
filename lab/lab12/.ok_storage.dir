@@ -1,0 +1,4 @@
+'tail replicate-correct', (0, 70)
+'scheme-def-correct', (512, 70)
+'repeatedly-cube-correct', (1024, 70)
+'wwsd-macros-correct', (1536, 70)
